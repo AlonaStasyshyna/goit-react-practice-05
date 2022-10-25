@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/goit-react-practice-04/static/css/main.7acaea2f.css",
+    "main.js": "/goit-react-practice-04/static/js/main.092d0897.js",
+    "index.html": "/goit-react-practice-04/index.html",
+    "main.7acaea2f.css.map": "/goit-react-practice-04/static/css/main.7acaea2f.css.map",
+    "main.092d0897.js.map": "/goit-react-practice-04/static/js/main.092d0897.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.7acaea2f.css",
+    "static/js/main.092d0897.js"
+  ]
+}
