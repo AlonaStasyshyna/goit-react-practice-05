@@ -1,15 +1,22 @@
-import { useFetchCountries } from "hooks/useFetchCountries";
-import { Loader } from "components/Loader/Loader";
-import { CountriesList } from "components/CountriesList/CountriesList";
+import { useDispatch, useSelector } from 'react-redux';
+import { deleteBook } from 'redux/books/books-actions';
+import { selectBooks } from 'redux/books/books-selectors';
 
 export const HomePage = () => {
-  const { countries, error, isLoading } = useFetchCountries();
+    const books = useSelector(selectBooks);
+    const dispatch = useDispatch()
 
-  return (
-    <>
-      {error && <h2>Ooops! Something went wrong.</h2>}
-      {isLoading && <Loader />}
-      {countries && <CountriesList countries={countries} />}
-    </>
-  )
+    return (
+        <ul>
+            {books.map(({ id, title, author, img, plot }) => (
+                <li key={id}>
+                    <h2>{title}</h2>
+                    <p>{author}</p>
+                    <img src={img} alt={title} />
+                    <p>{plot}</p>
+                    <button type="button" onClick={() => dispatch(deleteBook(id))}>Delete</button>
+                </li>
+            ))}
+        </ul>
+    );
 };
