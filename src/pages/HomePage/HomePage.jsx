@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from 'react-redux';
-import { deleteBook } from 'redux/books/books-actions';
+import { deleteBook } from 'redux/books/books-slice';
 import { selectBooks } from 'redux/books/books-selectors';
 
 export const HomePage = () => {
